@@ -3,7 +3,10 @@ let mongoose = require('mongoose');
 let developerSchema = mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
     name:{
-        firstName: String,
+        firstName: {
+            type: String,
+            required: true}
+        ,
         surname: String,
     },
     level : {

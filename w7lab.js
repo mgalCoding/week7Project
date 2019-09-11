@@ -53,9 +53,8 @@ app.post('/addtask', function (req, res) {
     newTask.save(function (err, resp) {
         if (err) throw err;
         console.log('Task successfully added to DB', resp);
-        res.redirect('/listtasks');
     });
-    // res.redirect('/listtasks');  
+    res.redirect('/listtasks');  
 });
 
 // Remove Tasks by id Page
@@ -141,7 +140,9 @@ app.get("/updatebyid", function (req, res) {
 app.post("/updatebyid", function (req, res) {
     let id = new mongoose.Types.ObjectId(req.body._id);
     Task.updateOne({_id: id}, {$set: {'status': req.body.newTaskStatus}}, function (err) {
-        if (err) throw err;
+        if (err){
+            throw err;
+        } 
     });
     res.redirect('/listtasks');
 });
