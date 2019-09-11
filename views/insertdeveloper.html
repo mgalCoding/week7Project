@@ -1,0 +1,28 @@
+<html> 
+        <head>
+                <link rel="stylesheet" href="styles.css">
+        </head>
+    <body>
+            <h1>Add a new task</h1>
+            <a href= '/'> Home </a><br>
+            <a href= '/addtask'> Add New Task </a><br>
+            <a href= '/listtasks'> List All Tasks </a><br>
+            <a href= '/deletebyid'> Delete Task By TaskID </a><br>
+            <a href="/deletecompletedtasks">Delete The Completed Tasks</a><br>
+            <a href="/updatebyid">Update Task Status By TaskID</a><br>
+            <a href= '/getdevelopers'> List All Developers </a><br>
+            <form action = "/insertdeveloper" method = 'POST'>
+            First Name <input type = "text" name = "firstName"/><br>
+            Last Name <input type = "text" name = "surname"/><br>
+            Level <select name="level" >
+                <option type = "text" value ="BEGINNER" name = "beginner">Beginner</option>
+                <option type = "text" value ="EXPERT" name = "expert">Expert</option>
+            </select> <br> Address <br>
+            State <input type = "text" name = "state"/><br>
+            Suburb <input type = "text" name = "suburb"/><br>
+            Street <input type = "text" name = "street"/><br>
+            Unit <input type = "text" name = "unit"/><br>
+            <button>Submit</button>
+        </form>
+    </body>
+</html>
