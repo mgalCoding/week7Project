@@ -164,5 +164,15 @@ app.post('/deletecompletedtasks', function(req, res){
     res.redirect('/listtasks');
 });
 
+// add a new GET request that responds with all the complete tasks 
+//sorted by name in descending order and limit it to 3 tasks
+app.get("/sortcomplete", function (req, res) {
+    Task.where({'status':'Complete'}).sort({name:-1}).limit(3).exec(function(err,data) {
+        if (err) {
+            throw err
+        }
+        res.send(data);
+    });
+});
 
     app.listen(8080);
